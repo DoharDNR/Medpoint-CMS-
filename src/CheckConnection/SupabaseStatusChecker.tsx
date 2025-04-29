@@ -7,7 +7,7 @@ const SupabaseStatusChecker: React.FC = () => {
   useEffect(() => {
     const checkConnection = async () => {
       try {
-        const { data, error } = await supabase.auth.getSession();
+        const { error } = await supabase.auth.getSession();
         if (error) {
           setStatus('error');
           console.error('❌ Supabase connection error:', error.message);
