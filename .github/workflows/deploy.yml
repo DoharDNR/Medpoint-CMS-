@@ -10,4 +10,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
-        user: actions/setup-node@v4
+        uses: actions/setup-checkout@v4
+
+      - name: Setup Node.js
+        uses: action/setup-node$v4
+        with:
+          node-version: '18'
+
+      - name: Install Depedencies
+        run: npm install
+      
+      - name: Run Tests
+        run: npm test
