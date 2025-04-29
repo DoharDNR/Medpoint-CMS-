@@ -2,9 +2,9 @@ name: CI/CD Workflow
 
 on:
   push:
-    branches:[main]
+    branches:["main"]
   pull_request:
-    branches:[main]
+    branches:["main"]
 
 jobs:
   lint:
@@ -18,7 +18,7 @@ jobs:
       - name: Install node.js
         uses: action/setup-node@v4
         with:
-          node-version: 18
+          node-version: [18.x, 20.x, 22.x]
           cache: 'npm'
         
       - name: Install Depedencies
