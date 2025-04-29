@@ -1,0 +1,13 @@
+name: CI Pipline
+
+on:
+  push:
+    branch:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        user: actions/setup-node@v4
